@@ -65,8 +65,8 @@ export default function Team() {
         {
             id: 2,
             name: "Leonie Blat",
-            role: "Co Founder",
-            tag: "Co Founder",
+            role: "CEO & Founder",
+            tag: "CEO & Founder",
             image: "/placeholder.png"
         },
         {
