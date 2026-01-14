@@ -60,14 +60,14 @@ export default function Team() {
             name: "M. Adan",
             role: "Founder & CEO",
             tag: "Leader",
-            image: "/placeholder.png"
+            image: "/adan2.png"
         },
         {
             id: 2,
-            name: "Leonie Blat",
+            name: "Leonie Blatt",
             role: "CEO & Founder",
             tag: "CEO & Founder",
-            image: "/placeholder.png"
+            image: "/leonie.png"
         },
         {
             id: 3,
@@ -108,7 +108,9 @@ export default function Team() {
                                     src={member.image}
                                     alt={member.name}
                                     fill
-                                    className="object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0"
+                                    className={`object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0 ${
+                                        member.id === 1 ? 'object-center' : 'object-top'
+                                    }`}
                                 />
                             </div>
 
