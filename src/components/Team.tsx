@@ -58,7 +58,7 @@ export default function Team() {
         {
             id: 1,
             name: "M. Adan",
-            role: "Founder & CEO",
+            role: "Co-Founder",
             tag: "Leader",
             image: "/adan2.png"
         },
@@ -67,12 +67,12 @@ export default function Team() {
             name: "Leonie Blatt",
             role: "CEO & Founder",
             tag: "CEO & Founder",
-            image: "/leonie.png"
+            image: "/leonie2.png"
         },
         {
             id: 3,
-            name: "Ahmd Umar",
-            role: "Lead Backend Developer",
+            name: "Ahmad Umar",
+            role: "Co-Founder",
             tag: "Development Team",
             image: "/placeholder.png"
         }

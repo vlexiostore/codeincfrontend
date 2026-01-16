@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import gsap from 'gsap';
 
@@ -42,8 +43,15 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
                 {/* Logo */}
-                <Link href="/" className="z-50 relative text-2xl md:text-3xl font-serif italic font-bold tracking-tight text-white mix-blend-difference">
-                    codeinc
+                <Link href="/" className="z-50 relative flex items-center">
+                    <Image
+                        src="/codeinc.png"
+                        alt="CodeInc Logo"
+                        width={300}
+                        height={100}
+                        className="h-20 md:h-24 w-auto"
+                        priority
+                    />
                 </Link>
 
                 {/* Desktop Nav */}

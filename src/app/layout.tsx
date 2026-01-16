@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "CodeInc | Premium Digital Solutions",
   description: "Impactful digital experiences for forward-thinking brands.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/codeinc fav logo  (1).png",
   },
 };
 
