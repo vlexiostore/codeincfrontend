@@ -86,56 +86,58 @@ export default function Services() {
     ];
 
     return (
-        <section id="services" ref={containerRef} className="bg-black text-white py-32 px-6 md:px-12 relative z-20 overflow-hidden">
+        <section id="services" ref={containerRef} className="bg-black text-white py-20 sm:py-32 px-4 sm:px-6 md:px-12 relative z-20 overflow-hidden">
             <div className="max-w-[1700px] mx-auto">
 
                 {/* Header Section */}
-                <div ref={headerRef} className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-12">
+                <div ref={headerRef} className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-20 gap-8 sm:gap-12">
                     <div>
                         {/* Badge matching image */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1A1A1A]/80 border border-white/10 mb-10 shadow-lg backdrop-blur-md">
-                            <PenTool size={14} className="text-gray-300" />
-                            <span className="text-[10px] font-bold text-gray-300 tracking-[0.1em] uppercase">Our Services</span>
+                        <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-[#1A1A1A]/80 border border-white/10 mb-6 sm:mb-10 shadow-lg backdrop-blur-md">
+                            <PenTool size={12} className="text-gray-300" />
+                            <span className="text-[9px] sm:text-[10px] font-bold text-gray-300 tracking-[0.1em] uppercase">Our Services</span>
                         </div>
 
                         {/* Heading matching image typography */}
-                        <h2 className="text-7xl md:text-[5.5rem] tracking-tight leading-[0.9] font-normal">
-                            <span className="font-serif italic mr-4 text-white">What</span>
+                        <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight leading-[0.9] font-normal">
+                            <span className="font-serif italic mr-2 sm:mr-4 text-white">What</span>
                             <span className="font-sans text-white/90">We Do</span>
                         </h2>
                     </div>
 
                     {/* Description matching image right-alignment */}
-                    <div className="max-w-md text-left text-gray-500 text-[17px] font-light leading-relaxed">
+                    <div className="max-w-md text-left text-gray-500 text-sm sm:text-base md:text-[17px] font-light leading-relaxed">
                         <p>We craft digital experiences from idea to launch — blending strategy, design, and engineering to build products that performs.</p>
                     </div>
                 </div>
 
                 {/* Grid matching image structure */}
-                <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-4 border border-white/10 rounded-[2.5rem] overflow-hidden bg-[#050505]/50 backdrop-blur-sm">
+                <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 border border-white/10 rounded-xl sm:rounded-2xl md:rounded-[2.5rem] overflow-hidden bg-[#050505]/50 backdrop-blur-sm">
                     {services.map((service, index) => (
-                        <div key={service.id} className={`group relative p-8 md:p-12 min-h-[320px] md:h-[480px] flex flex-col justify-between transition-colors duration-500 hover:bg-white/[0.02] ${index !== services.length - 1 ? 'md:border-r border-white/10' : ''} border-b md:border-b-0 border-white/10`}>
+                        <div key={service.id} className={`group relative p-6 sm:p-8 md:p-12 min-h-[280px] sm:min-h-[320px] md:h-[480px] flex flex-col justify-between transition-colors duration-500 hover:bg-white/[0.02] ${index !== services.length - 1 ? 'sm:border-r md:border-r border-white/10' : ''} border-b sm:border-b-0 border-white/10`}>
 
                             {/* Centered Glass Icon Container */}
                             <div className="flex-1 flex items-center justify-center">
-                                <div className="relative w-32 h-32 flex items-center justify-center shadow-2xl">
+                                <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 flex items-center justify-center shadow-2xl">
                                     {/* Layered Glass Effect */}
-                                    <div className="absolute inset-0 bg-[#222]/30 rounded-2xl border border-white/10 shadow-[inner_0_0_20px_rgba(255,255,255,0.05)] blur-[0.5px]" />
-                                    <div className="absolute inset-2 bg-gradient-to-br from-white/10 to-transparent rounded-xl opacity-50" />
+                                    <div className="absolute inset-0 bg-[#222]/30 rounded-xl sm:rounded-2xl border border-white/10 shadow-[inner_0_0_20px_rgba(255,255,255,0.05)] blur-[0.5px]" />
+                                    <div className="absolute inset-2 bg-gradient-to-br from-white/10 to-transparent rounded-lg sm:rounded-xl opacity-50" />
 
                                     {/* Icon with slight glow */}
                                     <div className="relative z-10 opacity-70 group-hover:opacity-100 transition-opacity duration-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                        {service.icon}
+                                        <div className="scale-75 sm:scale-90 md:scale-100">
+                                            {service.icon}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Content Section at bottom */}
-                            <div className="space-y-4 relative z-10">
-                                <span className="block text-[11px] font-bold text-white tracking-[0.2em] mb-4">/{service.id}</span>
-                                <div className="space-y-3">
-                                    <h3 className="text-[26px] font-semibold text-white tracking-tight leading-tight">{service.title}</h3>
-                                    <p className="text-gray-500 text-[15px] leading-relaxed font-light group-hover:text-gray-400 transition-colors duration-500">
+                            <div className="space-y-3 sm:space-y-4 relative z-10">
+                                <span className="block text-[10px] sm:text-[11px] font-bold text-white tracking-[0.2em] mb-3 sm:mb-4">/{service.id}</span>
+                                <div className="space-y-2 sm:space-y-3">
+                                    <h3 className="text-xl sm:text-2xl md:text-[26px] font-semibold text-white tracking-tight leading-tight">{service.title}</h3>
+                                    <p className="text-gray-500 text-sm sm:text-[15px] leading-relaxed font-light group-hover:text-gray-400 transition-colors duration-500">
                                         {service.description}
                                     </p>
                                 </div>

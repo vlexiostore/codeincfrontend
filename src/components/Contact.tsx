@@ -50,11 +50,11 @@ export default function Contact() {
     }, []);
 
     return (
-        <section id="contact" ref={containerRef} className="bg-black text-white py-16 md:py-32 px-4 md:px-6">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <section id="contact" ref={containerRef} className="bg-black text-white py-12 sm:py-16 md:py-32 px-4 sm:px-6">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
 
                 {/* Left Card - Aesthetic */}
-                <div ref={leftCardRef} className="relative h-[400px] lg:h-[600px] rounded-[3rem] overflow-hidden bg-[#0A0A0A] border border-white/5 flex flex-col justify-end p-8 md:p-12">
+                <div ref={leftCardRef} className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0A0A0A] border border-white/5 flex flex-col justify-end p-6 sm:p-8 md:p-12">
                     {/* Background Pattern */}
                     <div className="absolute inset-0 opacity-20 pointer-events-none">
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
@@ -66,43 +66,43 @@ export default function Contact() {
                     </div>
 
                     <div className="relative z-10">
-                        <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-2">Let&apos;s Talk</h2>
-                        <p className="text-4xl md:text-6xl font-serif italic text-gray-400">Your Next Big Idea</p>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-2">Let&apos;s Talk</h2>
+                        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-serif italic text-gray-400">Your Next Big Idea</p>
                     </div>
                 </div>
 
                 {/* Right Card - Form */}
-                <div ref={rightCardRef} className="h-auto lg:h-[600px] rounded-[3rem] bg-black border border-white/10 p-8 md:p-12 flex flex-col justify-center">
-                    <h3 className="text-2xl font-bold text-gray-200 mb-12">Fill This Form Below</h3>
+                <div ref={rightCardRef} className="h-auto lg:h-[600px] rounded-2xl sm:rounded-3xl bg-black border border-white/10 p-6 sm:p-8 md:p-12 flex flex-col justify-center">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-200 mb-8 sm:mb-12">Fill This Form Below</h3>
 
-                    <form className="flex flex-col gap-8">
+                    <form className="flex flex-col gap-6 sm:gap-8">
                         <div className="group">
-                            <label className="block text-sm font-bold text-white mb-2">Your Name</label>
+                            <label className="block text-xs sm:text-sm font-bold text-white mb-2">Your Name</label>
                             <input
                                 type="text"
                                 placeholder="Enter your full name"
-                                className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-white transition-colors"
+                                className="w-full bg-transparent border-b border-white/20 py-2.5 sm:py-3 text-sm sm:text-base text-white placeholder-gray-600 focus:outline-none focus:border-white transition-colors"
                             />
                         </div>
 
                         <div className="group">
-                            <label className="block text-sm font-bold text-white mb-2">Your Email</label>
+                            <label className="block text-xs sm:text-sm font-bold text-white mb-2">Your Email</label>
                             <input
                                 type="email"
                                 placeholder="Enter the e-mail"
-                                className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-white transition-colors"
+                                className="w-full bg-transparent border-b border-white/20 py-2.5 sm:py-3 text-sm sm:text-base text-white placeholder-gray-600 focus:outline-none focus:border-white transition-colors"
                             />
                         </div>
 
                         <div className="group">
-                            <label className="block text-sm font-bold text-white mb-2">More About The Project</label>
+                            <label className="block text-xs sm:text-sm font-bold text-white mb-2">More About The Project</label>
                             <textarea
                                 rows={3}
-                                className="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-white transition-colors resize-none"
+                                className="w-full bg-transparent border-b border-white/20 py-2.5 sm:py-3 text-sm sm:text-base text-white focus:outline-none focus:border-white transition-colors resize-none"
                             />
                         </div>
 
-                        <button type="button" className="w-full mt-8 py-4 px-8 rounded-full bg-white text-black font-bold text-lg hover:bg-gray-200 transition-colors">
+                        <button type="button" className="w-full mt-4 sm:mt-8 py-3 sm:py-4 px-6 sm:px-8 rounded-full bg-white text-black font-bold text-base sm:text-lg hover:bg-gray-200 transition-colors">
                             Send Message
                         </button>
                     </form>

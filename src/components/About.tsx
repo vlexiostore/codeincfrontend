@@ -56,7 +56,7 @@ export default function About() {
     ];
 
     return (
-        <section id="about" ref={sectionRef} className="relative bg-black text-white py-32 md:py-48 overflow-hidden">
+        <section id="about" ref={sectionRef} className="relative bg-black text-white py-20 sm:py-32 md:py-48 overflow-hidden">
 
             {/* Background "agencify" Watermark */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
@@ -72,7 +72,7 @@ export default function About() {
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/[0.03] to-transparent bg-[length:4px_4px] opacity-20" />
 
             {/* Main Content */}
-            <div ref={contentRef} className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center text-center">
+            <div ref={contentRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex flex-col items-center text-center">
 
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm mb-12">
@@ -81,16 +81,16 @@ export default function About() {
                 </div>
 
                 {/* Main Heading */}
-                <h2 className="max-w-3xl text-3xl md:text-5xl font-medium leading-[1.3] mb-32">
+                <h2 className="max-w-3xl text-2xl sm:text-3xl md:text-5xl font-medium leading-[1.3] mb-16 sm:mb-24 md:mb-32 px-4">
                     We help ambitious <span className="text-white font-bold">brands</span> and startups build digital products that <span className="text-white font-bold">stand out and scale.</span> We <span className="text-gray-500">believe</span> in working smart, building fast, and designing with purpose.
                 </h2>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-32 w-full border-t border-white/5 pt-12">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 md:gap-32 w-full border-t border-white/5 pt-8 sm:pt-12 px-4">
                     {stats.map((stat, index) => (
-                        <div key={index} className="flex flex-col items-start md:items-center text-left md:text-center group">
-                            <span className="text-sm text-gray-500 mb-6 block w-full border-b border-white/10 pb-4 md:border-none md:pb-0">{stat.label}</span>
-                            <span className="text-6xl md:text-8xl font-sans tracking-tight text-white/90 group-hover:text-white transition-colors duration-300">
+                        <div key={index} className="flex flex-col items-center text-center group">
+                            <span className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6 block w-full">{stat.label}</span>
+                            <span className="text-5xl sm:text-6xl md:text-8xl font-sans tracking-tight text-white/90 group-hover:text-white transition-colors duration-300">
                                 {stat.value}
                             </span>
                         </div>

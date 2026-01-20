@@ -32,11 +32,11 @@ export default function EmployeeLayout({
     return (
         <div className="min-h-screen bg-black text-white">
             {/* Mobile Sidebar Toggle */}
-            <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10 p-4 flex items-center justify-between">
-                <h1 className="text-xl font-bold">Employee Dashboard</h1>
+            <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10 p-3 sm:p-4 flex items-center justify-between">
+                <h1 className="text-lg sm:text-xl font-bold truncate">Employee Dashboard</h1>
                 <button
                     onClick={() => setSidebarOpen(!sidebarOpen)}
-                    className="p-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                    className="p-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors flex-shrink-0"
                 >
                     {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
                 </button>
@@ -98,8 +98,8 @@ export default function EmployeeLayout({
             )}
 
             {/* Main Content */}
-            <main className="lg:ml-64 pt-16 lg:pt-0">
-                <div className="p-6 md:p-8 lg:p-12">
+            <main className="lg:ml-64 pt-14 sm:pt-16 lg:pt-0">
+                <div className="p-4 sm:p-6 md:p-8 lg:p-12">
                     {children}
                 </div>
             </main>

@@ -95,7 +95,7 @@ export default function Testimonials() {
     ];
 
     return (
-        <section ref={sectionRef} className="relative bg-black text-white min-h-[900px] h-auto py-24 md:py-32 overflow-hidden flex flex-col items-center justify-center">
+        <section ref={sectionRef} className="relative bg-black text-white min-h-[600px] sm:min-h-[800px] md:min-h-[900px] h-auto py-16 sm:py-24 md:py-32 overflow-hidden flex flex-col items-center justify-center">
 
             {/* Background Particles/Wave Effect */}
             <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -107,12 +107,12 @@ export default function Testimonials() {
             </div>
 
             {/* Central Title */}
-            <div ref={titleRef} className="relative z-30 text-center max-w-2xl px-6 mb-20 md:mb-0">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8">
-                    <MessageSquareQuote size={14} className="text-gray-300" />
-                    <span className="text-[10px] font-bold text-gray-300 tracking-[0.2em] uppercase">Testimonials</span>
+            <div ref={titleRef} className="relative z-30 text-center max-w-2xl px-4 sm:px-6 mb-12 sm:mb-20 md:mb-0">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6 sm:mb-8">
+                    <MessageSquareQuote size={12} className="text-gray-300" />
+                    <span className="text-[9px] sm:text-[10px] font-bold text-gray-300 tracking-[0.2em] uppercase">Testimonials</span>
                 </div>
-                <h2 className="text-5xl md:text-7xl font-serif">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif">
                     Hear from the <span className="italic text-white/50">Clients</span> <br />
                     <span className="font-sans font-medium">We&apos;ve Partnered With</span>
                 </h2>
@@ -120,16 +120,16 @@ export default function Testimonials() {
 
             {/* Scattered Cards Container */}
             {/* On mobile: Stacked. On desktop: Absolute positioning */}
-            <div ref={cardsRef} className="relative w-full max-w-[1400px] h-auto md:h-[800px] flex flex-col md:block gap-8 px-4 md:px-0 mt-12 md:mt-0">
+            <div ref={cardsRef} className="relative w-full max-w-[1400px] h-auto md:h-[800px] flex flex-col md:block gap-6 sm:gap-8 px-4 sm:px-6 md:px-0 mt-8 sm:mt-12 md:mt-0">
                 {testimonials.map((testimonial) => (
                     <div
                         key={testimonial.id}
-                        className={`relative md:absolute w-full md:w-[420px] p-8 rounded-2xl bg-[#0A0A0A]/90 border border-white/5 backdrop-blur-md shadow-2xl ${testimonial.position}`}
+                        className={`relative md:absolute w-full md:w-[420px] p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[#0A0A0A]/90 border border-white/5 backdrop-blur-md shadow-2xl ${testimonial.position}`}
                     >
-                        <p className="text-gray-300 text-lg leading-relaxed mb-6">&quot;{testimonial.text}&quot;</p>
+                        <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">&quot;{testimonial.text}&quot;</p>
 
-                        <div className="flex items-center gap-4">
-                            <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/10">
+                        <div className="flex items-center gap-3 sm:gap-4">
+                            <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-white/10 flex-shrink-0">
                                 <Image
                                     src={testimonial.image}
                                     alt={testimonial.name}
@@ -138,8 +138,8 @@ export default function Testimonials() {
                                 />
                             </div>
                             <div>
-                                <h4 className="text-white font-bold text-sm tracking-wide">{testimonial.name}</h4>
-                                <p className="text-gray-500 text-xs uppercase tracking-wider">{testimonial.role}</p>
+                                <h4 className="text-white font-bold text-xs sm:text-sm tracking-wide">{testimonial.name}</h4>
+                                <p className="text-gray-500 text-[10px] sm:text-xs uppercase tracking-wider">{testimonial.role}</p>
                             </div>
                         </div>
                     </div>
