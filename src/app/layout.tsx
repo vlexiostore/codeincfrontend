@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import CustomCursor from "@/components/CustomCursor";
+import PageTransition from "@/components/PageTransition";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,6 +36,8 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased bg-black text-white selection:bg-blue-600 selection:text-white font-sans`}
       >
+        <PageTransition />
+        <CustomCursor />
         <SmoothScroll>
           {children}
         </SmoothScroll>

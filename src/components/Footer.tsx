@@ -34,12 +34,13 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Internal */}
+                    {/* Portals */}
                     <div>
-                        <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6">Employee</h4>
+                        <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6">Portals</h4>
                         <ul className="flex flex-col gap-4">
                             <li><a href="/admin" className="text-lg font-medium hover:text-gray-400 transition-colors">Admin</a></li>
-                            {/* Add more if needed */}
+                            <li><a href="https://portal.codeinc.ai/auth/signup/employee" target="_blank" rel="noopener noreferrer" className="text-lg font-medium hover:text-gray-400 transition-colors">Employee</a></li>
+                            <li><a href="https://portal.codeinc.ai/auth/signup/client" target="_blank" rel="noopener noreferrer" className="text-lg font-medium hover:text-gray-400 transition-colors">Client</a></li>
                         </ul>
                     </div>
 

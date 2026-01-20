@@ -74,12 +74,14 @@ export default function Navbar() {
 
                 {/* Desktop Action */}
                 <div className="hidden md:block">
-                    <Link
-                        href="/contact"
+                    <a
+                        href="https://portal.codeinc.ai/auth/signup/client"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="px-6 py-2.5 rounded-full bg-white text-black text-sm font-bold hover:bg-gray-200 transition-colors"
                     >
-                        Let&apos;s Talk
-                    </Link>
+                        Sign up
+                    </a>
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -117,13 +119,15 @@ export default function Navbar() {
 
                         <div className="mobile-menu-item w-full h-px bg-white/10 my-4" />
 
-                        <Link
-                            href="/contact"
+                        <a
+                            href="https://portal.codeinc.ai/auth/signup/client"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={() => setIsOpen(false)}
                             className="mobile-menu-item px-8 py-4 rounded-full bg-white text-black text-lg font-bold hover:bg-gray-200 transition-colors w-full text-center"
                         >
-                            Start a Project
-                        </Link>
+                            Sign up
+                        </a>
 
                         <div className="mobile-menu-item flex gap-6 mt-4 opacity-50">
                             <span className="text-xs uppercase tracking-widest text-gray-400">Instagram</span>

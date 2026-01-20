@@ -1,16 +1,16 @@
-'use client'
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Instagram, MoveUpRight, Globe } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import TextReveal from '@/components/ui/TextReveal';
+import ParallaxImage from '@/components/ui/ParallaxImage';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
-    const textRef = useRef<HTMLHeadingElement>(null);
     const bottomRef = useRef<HTMLDivElement>(null);
     const marqueeRef = useRef<HTMLDivElement>(null);
 
@@ -18,23 +18,13 @@ export default function Hero() {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline();
 
-            // Initial Load Animations
-            if (textRef.current) {
-                tl.from(textRef.current.querySelectorAll('span'), {
-                    y: 100,
-                    opacity: 0,
-                    stagger: 0.1,
-                    duration: 1,
-                    ease: "power3.out"
-                });
-            }
-
             tl.from(bottomRef.current, {
                 y: 50,
                 opacity: 0,
                 duration: 1,
-                ease: "power3.out"
-            }, "-=0.5");
+                ease: "power3.out",
+                delay: 0.5 // Wait for page transition and text reveal
+            });
 
             // Marquee Animation
             if (marqueeRef.current) {
@@ -70,12 +60,16 @@ export default function Hero() {
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
                 {/* HEADLINE */}
                 <div className="md:col-span-12 pt-8 md:pt-4 text-center md:text-left">
-                    <h1 ref={textRef} className="leading-none tracking-tighter text-white">
-                        <span className="block text-[13vw] md:text-[7rem] lg:text-[8.5rem] font-sans font-medium origin-bottom text-white pb-2">Create,</span>
-                        <span className="block text-[13vw] md:text-[7rem] lg:text-[8.5rem] font-serif italic font-light ml-0 md:ml-12 text-gray-400 origin-bottom leading-none">
-                            Impactful
-                        </span>
-                    </h1>
+                    <div className="leading-none tracking-tighter text-white">
+                        <TextReveal delay={0.8} className="text-[13vw] md:text-[7rem] lg:text-[8.5rem] font-sans font-medium text-white pb-2 block">
+                            Create,
+                        </TextReveal>
+                        <div className="ml-0 md:ml-12">
+                            <TextReveal delay={1.0} className="text-[13vw] md:text-[7rem] lg:text-[8.5rem] font-serif italic font-light text-gray-400 leading-none block">
+                                Impactful
+                            </TextReveal>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Top Right Content (Copyright + Socials) */}
@@ -90,16 +84,16 @@ export default function Hero() {
                         <div className="flex items-center justify-end gap-6">
                             <span className="text-xl font-bold text-white">Contact Us</span>
                             <div className="flex gap-2">
-                                <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500 hover:scale-110">
+                                <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500 hover:scale-110 cursor-hover">
                                     <Facebook size={18} />
                                 </Link>
-                                <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500 hover:scale-110">
+                                <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500 hover:scale-110 cursor-hover">
                                     <Instagram size={18} />
                                 </Link>
-                                <Link href="https://codeinc.ai" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500 hover:scale-110">
+                                <Link href="https://codeinc.ai" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500 hover:scale-110 cursor-hover">
                                     <Globe size={18} />
                                 </Link>
-                                <Link href="https://behance.net" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500 hover:scale-110">
+                                <Link href="https://behance.net" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500 hover:scale-110 cursor-hover">
                                     <span className="font-bold text-xs leading-none">Bē</span>
                                 </Link>
                             </div>
@@ -116,7 +110,7 @@ export default function Hero() {
                     <div className="mb-12 md:mb-16">
                         <h3 className="text-lg font-medium text-white mb-6 uppercase tracking-widest opacity-60">We do</h3>
                         <div className="space-y-1 text-xl text-gray-400 font-light">
-                            <p><span className="text-white hover:text-blue-400 transition-colors cursor-default">Brand Identity</span> / UI/UX Design</p>
+                            <p><span className="text-white hover:text-blue-400 transition-colors cursor-default cursor-hover">Brand Identity</span> / UI/UX Design</p>
                             <p>Development / Marketing</p>
                         </div>
                     </div>
@@ -153,15 +147,15 @@ export default function Hero() {
                         <span className="text-xl font-mono opacity-40 text-gray-400 tracking-tighter">(02)</span>
                     </div>
 
-                    <div className="w-full h-[200px] md:h-[240px] bg-[#0A0A0A] rounded-[2rem] overflow-hidden relative group border border-white/5 transition-all duration-700 hover:border-white/20 hover:shadow-[0_0_50px_rgba(255,255,255,0.05)]">
-                        <Image
+                    <div className="w-full h-[200px] md:h-[240px] bg-[#0A0A0A] rounded-[2rem] overflow-hidden relative group border border-white/5 transition-all duration-700 hover:border-white/20 hover:shadow-[0_0_50px_rgba(255,255,255,0.05)] cursor-hover">
+                        <ParallaxImage
                             src="/placeholder.png"
                             alt="Featured Project"
-                            fill
-                            className="object-cover opacity-60 group-hover:opacity-100 transition-all duration-700 grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100"
+                            className="group-hover:grayscale-0 transition-all duration-700 grayscale"
+                            speed={0.1}
                         />
                         {/* Overlay Content */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-10 flex flex-col justify-between">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-10 flex flex-col justify-between pointer-events-none">
                             <div className="flex justify-end translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                                 <div className="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-2xl hover:scale-110 transition-transform cursor-pointer">
                                     <MoveUpRight size={24} />
