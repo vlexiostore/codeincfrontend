@@ -46,7 +46,10 @@ export default function Hero() {
     }, []);
 
     return (
-        <section ref={containerRef} className="relative min-h-screen h-auto md:h-screen flex flex-col justify-between px-4 sm:px-6 md:px-12 pb-8 pt-0 overflow-hidden bg-black text-white">
+        <section
+            ref={containerRef}
+            className="relative min-h-screen h-auto md:h-screen flex flex-col justify-start gap-10 md:gap-16 px-4 sm:px-6 md:px-12 pb-8 pt-12 sm:pt-16 md:pt-32 overflow-hidden bg-black text-white"
+        >
 
             {/* Background Dotted Pattern */}
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none"
