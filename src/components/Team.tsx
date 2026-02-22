@@ -63,13 +63,6 @@ export default function Team() {
             image: "/adan2.png"
         },
         {
-            id: 2,
-            name: "Leonie Blatt",
-            role: "CEO & Founder",
-            tag: "CEO & Founder",
-            image: "/leonie2.png"
-        },
-        {
             id: 3,
             name: "Ahmad Umar",
             role: "Co-Founder",
@@ -94,7 +87,7 @@ export default function Team() {
                 </div>
 
                 {/* Team Grid */}
-                <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+                <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
                     {team.map((member) => (
                         <div key={member.id} className="group relative h-[350px] sm:h-[400px] md:h-[450px] rounded-2xl sm:rounded-3xl overflow-hidden bg-white/[0.02] border border-white/5 transition-all duration-500 hover:border-white/20">
 
