@@ -57,13 +57,13 @@ export default function Team() {
     const team = [
         {
             id: 1,
-            name: "M. Adan",
-            role: "Co-Founder",
-            tag: "Leader",
-            image: "/adan2.png"
+            name: "Minjun",
+            role: "CEO & Founder",
+            tag: "CEO",
+            image: "/placeholder.png"
         },
         {
-            id: 3,
+            id: 2,
             name: "Ahmad Umar",
             role: "Co-Founder",
             tag: "Development Team",
